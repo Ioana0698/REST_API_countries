@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="header">
+    <form>
+        <label for="filterBy" style="font-size: 10">Filter By</label>
+        <div class="filterBy">
+            <select id="filterByRegion" onchange=filterR()>
+                <option value="Asia">Asia</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+            
+            <select id="filterByCurrencies">Currencies
+            </select>
+            <div>
+                <input id="filterByPopulation" type="range" id="volume" name="volume"
+                       min="0" max="15000000"  onchange="filterP()">
+                <label for="volume">Population</label>
+              </div>
+            <div class="filterInput">
+                <p id="data"></p>
+            </div>
+        </div>
+    </form>
+    <h3 style="font-size:30px; font-weight: 1000;">Where in the world?</h3>
+</div>
+    <div id="searchWrapper">
+        <input type="text" name="searchBar" id="searchBar" placeholder="search for a country"/>
+    </div>
+
+<div id="countries">
+</div>
+
+</body>
+<script src="main.js"></script>
+</html>
