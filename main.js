@@ -1,17 +1,16 @@
 const countriesList = document.getElementById("countries");
 let countries;
 let countriesData=[];
+
 const searchBar=document.getElementById('searchBar');
 
-
- var selected="";
 
 const filterBy=document.getElementById('filterBy');
 const filteredData=document.getElementById("data");
 const filterByRegion=document.getElementById("filterByRegion");
 const filterByPopulation=document.getElementById("filterByPopulation");
-const filterByCurrencies=document.getElementById("filterByCurrencies");
 
+var flipCard=document.getElementById("country");
 
 searchBar.addEventListener('keyup',(e)=>{
     const searchString=e.target.value;
@@ -31,6 +30,9 @@ searchBar.addEventListener('keyup',(e)=>{
 });
 function filterR(){
     let filterReg=countriesData.filter((country)=>{
+        if(filterByRegion.value=="all")
+        return(country.region)
+        else
         return(country.region==filterByRegion.value)
     })
     displayCards(filterReg);
@@ -42,12 +44,7 @@ function filterP(){
     })
     displayCards(filterPop);
 }
-function fillData(){
-    let countries=countriesData;
-    let regions=countries.map((country)=>{
-        return country.region;
-    } );
-}
+
 
 const loadCards=async()=>{
     try {
@@ -90,7 +87,7 @@ const displayCards=(countriesData) =>{
   countriesList.innerHTML = htmlString;
  };
  loadCards();
- var flipCard=document.getElementById("country");
+
 function seeMore(){
     targList=document.getElementsByClassName("hidden");
     if(targList){
@@ -103,9 +100,6 @@ function seeMore(){
     document.getElementById("button").style.visibility="hidden";
 }}
 
-function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-  }
 
 
  
