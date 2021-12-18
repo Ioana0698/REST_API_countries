@@ -6,9 +6,13 @@
 
 </head>
 <body>
-<div class="header">
-    <form>
-        <label for="filterBy" style="font-size: 10">Filter By</label>
+<div id="header" style="align-items: center;">
+    <h3 style="position:relative; left:500px; font-size:30px; font-weight: 1000;">Where in the world?</h3>
+
+    <div id="searchWrapper">
+        <input  style=" position:relative; left:570px;" type="text" name="searchBar" id="searchBar" placeholder="search country,capital or code"/>
+    </div>
+    <form style="position: relative; left:500px;">
         <div class="filterBy">
             <select id="filterByRegion" onchange=filterR()>
                 <option value="Asia">Asia</option>
@@ -17,25 +21,16 @@
                 <option value="Europe">Europe</option>
                 <option value="Oceania">Oceania</option>
             </select>
-            
-            <select id="filterByCurrencies">Currencies
-            </select>
             <div>
+                <label for="volume">Population</label>
                 <input id="filterByPopulation" type="range" id="volume" name="volume"
                        min="0" max="15000000"  onchange="filterP()">
-                <label for="volume">Population</label>
               </div>
             <div class="filterInput">
                 <p id="data"></p>
             </div>
         </div>
     </form>
-    <h3 style="font-size:30px; font-weight: 1000;">Where in the world?</h3>
-</div>
-    <div id="searchWrapper">
-        <input type="text" name="searchBar" id="searchBar" placeholder="search for a country"/>
-    </div>
-
 <div id="countries">
 </div>
 
